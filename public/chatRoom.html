@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>ChatRoom.com</title>
+    <style>
+      body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+
+      #form { background: rgba(0, 0, 0, 0.15); padding: 0.25rem; position: fixed; bottom: 0; left: 0; right: 0; display: flex; height: 3rem; box-sizing: border-box; backdrop-filter: blur(10px); }
+      #input { border: none; padding: 0 1rem; flex-grow: 1; border-radius: 2rem; margin: 0.25rem; }
+      #input:focus { outline: none; }
+      #form > button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
+
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages > li { padding: 0.5rem 1rem; }
+      #messages > li:nth-child(odd) { background: #efefef; }
+      .message-block { margin-bottom: 1rem; } 
+      .user-id { font-size: 0.75rem; color: #555; } 
+      .message-content { font-size: 1rem; }
+
+      .center-justified-text {
+        display: inline-block; /* Take up only as much space as the text/image */
+        padding: 10px 15px; /* Add some spacing around the text */
+        margin: 10px auto; /* Add margin to center vertically and horizontally */
+        background-color: grey; /* Set the background color */
+        color: black; /* Text color */
+        border-radius: 10px; /* Rounded corners */
+        text-align: center; /* Center align the text */
+        font-size: 16px; /* Set a readable font size */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow for depth */
+      }
+
+    </style>
+  </head>
+  <body>
+    
+    <div id="room id">Room Id : </div>
+    <div id="no of users">Online users  : </div>
+    <div id="user-list">Users: </div>
+
+    <ul id="messages"></ul>
+    <form id="form" action="">
+      <input id="input" autocomplete="off" />
+      <button type="submit">Send</button>
+      <!-- <button id="toggle-btn">Disconnect</button> -->
+    </form>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/scripts/chatRoom.scripts.js"></script>
+    </body>
+</html>
